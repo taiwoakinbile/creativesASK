@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{            
+   /* background-image: url('images/Abstract Painting.jpg'); */
+   /* background-color:#e8f1f2; */
+   background-position: cover;
+   background-repeat: no-repeat; 
+}
+
+/* nav bar styling */
+
+
+nav, .navbar-green {
+   background-color: #001b00;
+}
+
+/* .navbar-green .navbar-nav .nav-link {
+   color: #e1d000;
+} */
+
+.navbar-green .navbar-nav .nav-link {
+   color: #001b00;
+}
+
+
+/* custom toggler icon */
+.custom-toggler.navbar-toggler {
+   border: 1px solid rgb(225,208,0) !important;
+}
+.custom-toggler .navbar-toggler-icon {
+ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(225,208,0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+/* button, text, background styling  */
+.text-light{
+   color: #e8f1f2;
+}
+
+.text-yellow{
+   color: #e1d000;
+}
+
+.text-green{
+   color: #001b00;
+}
+
+.bg-green{
+   background-color: #001b00;
+}
+
+.bg-yellow{
+   background-color: #e1d000;
+}
+
+.bg-gray{
+   background-color: #e8f1f2;
+}
+
+.bg-lime{
+   background-color: #b3efb2;
+}
+
+
+.btn-outline-yellow{
+   border-color: #e1d000;
+   color: #001b00;
+}
+
+.btn-outline-yellow:active{
+   background-color: #e1d000;
+   color: #001b00;
+}
+.btn-outline-yellow:hover{
+   background-color: #e1d000;
+   color: #001b00;
+}
+
+.btn-yellow{
+   background-color: #e1d000;
+   color: #001b00;
+}
+
+.btn-yellow:hover{
+   background-color: #001b00;
+   color: #e1d000;
+}
+
+.btn-outline-green{
+   border-color: #001b00;
+   color: #001b00;
+}
+.btn-outline-green:hover{
+   background-color: #001b00;
+   color: #e1d000;
+}
+
+.btn-outline-green:active{
+   background-color: #001b00;
+   color: #e1d000;
+}
+.btn-green{
+   background-color: #001b00;
+   color: #e1d000;
+}
+
+.btn-green:hover{
+   background-color:  #e1d000;
+   border-color: #e1d000;
+   color: #001b00;
+}
+
+button:active{
+   border:none;
+   box-shadow: none;
+}
+
+/* section styling-login page  */
+div .signin-login-box{
+   background-color: #ffffff;
+   margin-top: 75px;  
+   
+}
+section{
+   background-color: #ffffff;
+   min-height: 630px;
+}
+
+div .side-bar{
+   min-height: 630px;
+   background: url('images/art5.jpg') #e8f1f2 no-repeat center;
+   background-size: cover;
+}
+
+.side-bar p{
+   background-color: #ffffff;
+}
+
+.blockquote{
+   margin-top: 50px;
+}
+/* section{
+   border: 1px solid;
+   min-height: 700px;
+   background-image: linear-gradient(135deg, rgba(255,250,194,1) 0%, rgba(224,225,170,1) 10%, rgba(0,51,0,1) 81%, rgba(0,51,0,1) 100%);
+} */
+
+
+/* footer styling  */
+footer{
+   background-color: #e8f1f2;
+}
+
+   /* media queries */
+
+@media (max-width: 320px)  {
+
+   footer p{
+       font-size: small;
+   }
+   
+
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+
+}
