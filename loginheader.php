@@ -1,3 +1,25 @@
+<?php 
+    session_start();
+     include_once('creativaskclass.php');
+
+
+     if (!isset($_SESSION['myuserid'])) {
+        # redirect to login page
+        header("Location:  http://localhost/creativesASK/signin.php");
+        exit;
+    }
+
+    function sanitizeInput($data){
+        // $data = trim(htmlspecialchars(addslashes($data)));
+        $data = trim($data);
+        $data = htmlspecialchars($data);
+        $data = addslashes($data);
+    
+    return $data;
+    }
+        
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +34,11 @@
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="fa/css/all.css">
     <link rel="stylesheet" href="style1.css" type="text/css">
-    <title>creativesASK | Website</title>
+    <title>creativesASK | <?php echo $pagetitle;?></title>
     
 </head>
 <body>
-<?php 
-    session_start();
-     include_once('creativaskclass.php');
-    function sanitizeInput($data){
-        // $data = trim(htmlspecialchars(addslashes($data)));
-        $data = trim($data);
-        $data = htmlspecialchars($data);
-        $data = addslashes($data);
-    
-    return $data;
-    }
-        
-?>
+
     <div class="container-fluid">
         <nav class="navbar navbar-expand-sm navbar-green  bg-green">
             <a class="navbar-brand" href=""><img src="images/img.png" alt="creativeasklogo"></a>
@@ -43,11 +53,15 @@
                                 <i class="fa fa-plus-circle" aria-hidden="true"></i> Posts
                         </a>                      
                         
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <button class="dropdown-item"  href="#" data-toggle="modal" data-target="#post-questionModal">Post a question</button>
+                        <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <button class="dropdown-item"  href="" id="writepost" >Post a question</button>
                             <a class="dropdown-item"  id="" href="">Answer a Question</a>
-                        </div>
+                        </div> -->
                     </div>
+
+                    <a class="btn btn-green  ml-3 " href="writepost.php" role="button" > <i class="fa fa-plus-circle" aria-hidden="true"></i>Write Post
+                        </a>  
+
                     
                     <div class="dropdown">
                         <a class="btn  btn-green ml-3 " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,13 +75,14 @@
                     </div>
                     
                     <div class="dropdown">
-                        <a class=" ml-3 btn  btn-green " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class=" ml-3 btn  btn-green " href="profile.php" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-portrait"></i> Profile
                         </a>
                       
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="user-profile.php">View Profile</a>
-                          <a class="dropdown-item" href="landing.php">Sign Out</a>
+                          <a class="dropdown-item" href="user-profile.php">Edit Profile</a>
+                          <!-- the php code above may no longer be necessary -->
+                          <a class="dropdown-item" href="logout.php">Sign Out</a>
                         </div>
                     </div>
 
@@ -85,6 +100,9 @@
             </div>
         </nav>
 
+        <div class="postcontainer"></div>
+
+    
 
 
     

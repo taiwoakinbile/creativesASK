@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('loginheader.php'); ?>
                 </div>  
                     <div class="dropdown">
                         <a class="btn  btn-outline-wine ml-3 " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -6,8 +6,8 @@
                         </a>
                         
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Expert Articles</a>
-                            <a class="dropdown-item" href="#">Business List</a>
+                            <!-- <a class="dropdown-item" href="#">Expert Articles</a> -->
+                            <a class="dropdown-item" href="business-list.php">Business List</a>
                         </div>
                     </div>                
                 </div>
@@ -76,26 +76,5 @@
 
         </section>
 
-        <?php include('footer.php'); ?>
+        <?php include('loginfooter.php'); ?>
 
-    </div>
-
-
-
-
-
-    <!-- jQuery -->
-    <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-    <!-- popper -->
-    <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            // when a post is submitted, a div .timeline should be created and and added to the center column of the main content
-        });
-
-    </script>
-    
-</body>
-</html>

@@ -83,18 +83,13 @@ if (isset($_POST['register']) && $_POST['register'] == 'register') {
             $newuserobject = new User;
             $newuserobject -> signup($lastname, $firstname, $email, $password);
         }        
-    
-    
-    
 
 }
     
-    
-
 ?>
 
 
-<div class="signup-form py-5 px-3 ">
+<div class="signup-form py-3 px-3 ">
 <?php 
     //check if there is no validation error
     $count_errorlist = count($errorlist);
@@ -117,8 +112,8 @@ if (isset($_POST['register']) && $_POST['register'] == 'register') {
         <div class="form-group row">
             <label for="Firstname" class="col-md-12 col-form-label" hidden>Firstname</label>
             <div class="col-md-12">
-                <input type="text" class="form-control" name="firstname" id="'firstname'" placeholder="Firstname"
-                 value="<?php if (isset($_POST['firstname'])) { echo $_POST['firstname']; } ?>">
+                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Firstname" 
+                value="<?php if (isset($_POST['firstname'])) { echo $_POST['firstname']; } ?>">
             </div>
         </div>
 

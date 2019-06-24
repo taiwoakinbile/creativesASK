@@ -1,79 +1,91 @@
-        <?php include('loginheader.php'); ?>
+        <?php 
+        $pagetitle = 'Edit Profile';
+        include('loginheader.php');
+        
+        $errordisplay = array();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //assign the variables to form input
+        $userbio = $_REQUEST['userbio'];
+         
+
+        //sanitize the user input
+        $userbio = sanitizeInput($userbio);
+        
+
+        echo "<pre>";
+        echo print_r($_FILES);
+        var_dump($_SESSION);
+        echo "</pre>";
+
+        //check if any of the user input field is empty 
+        //validate product name field
+        // if (isset($userbio) ) {
+        // $errordisplay['productname'] = "<span class='text text-danger'>Product Name is required!</span>";
+        // }
+
+
+        //if all error variables are empty then create an object
+        if(isset($userbio)){
+
+            $userobj = new User;
+            $output =  $userobj-> updateProfile($userbio);
+        }
+
+
+    }
+        
+        ?>
         <!-- body -->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <section>                       
-                            
-                        <div class="col-md-12">
-                            <div class="list-group">
-                                <div class="list-group-item list-group-item-action">
-                                    <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">Recent Posts</h5>                                        
-                                    </div>
-                                </div>
-                                <div class="list-group-item list-group-item-action timeline">
-                                    <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">How important is product management?</h5>
-                                    <small>3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">If there is one thing true about passionate product people, is that all 
-                                            of them hold a particular product in high regard. Chefs just love certain 
-                                            food joints. Painters have their predilection for an Old Master. 
-                                            Perhaps it was the app they could never drop, or the utility that saved 
-                                            them a lot of time, or the service that arranged the perfect holiday. </small>
-                                </div>
-                                <div class="list-group-item list-group-item-action timeline">
-                                    <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">List group item heading</h5>
-                                    <small>3 days ago</small>
-                                    </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                    <small>Donec id elit non mi porta.</small>
-                                </div>
-                            </div>
-                        </div>                            
-                        
-                    </section>   
+                      
                 </div>   
 
                 <div class="col-md-6">
                     <div class="card" >
                         <div class="card-body">
-                            <i class="fas fa-user fa-5x"></i>
-                            <img src="images/img1" alt="avatar" class="img-fluid rounded-circle mx-auto d-block">
-                            <h5 class="card-title">Username</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">user@yahoo.com</h6>                        
-                            <form action="index.php" method="post" > 
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <label for=""></label>
-                                    <input type="file" class="form-control-file" name="profilephoto" id="profilephoto"
-                                    placeholder="" aria-describedby="fileHelpId">
-                                    
-                                </div>
-                        </div>   
+                        <?php if (isset($output)) { echo $output; }?>
+                        <button type="button" class="btn btn-green btn-sm text-uppercase ml-1 float-right">Choose Interest</button>
+
+                        <button type="button" class="btn btn-yellow btn-sm text-uppercase float-right">Add business</button>
+
+                            <div>
+                            <?php 
+                                 if (empty($_SESSION['profilephoto'])) {
+                                ?>
+                                    <img src="images/female.jpg" alt="profile photo" class="img-fluid w-25 h-25"><br>
+                                <?php
+                                }else{
+                                    ?>
+                                    <img src="<?php echo $_SESSION['profilephoto'];?>" alt="<?php echo $_SESSION['firstname']." ".$_SESSION['lastname'];?>"  class="img-fluid w-50 h-50">
+                                    <?php
+                                }
+                                ?>
+
+                            </div>
+                            <h5 class="card-title">Welcome, <?php echo $_SESSION['lastname']." ".$_SESSION['firstname'];?></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $_SESSION['email']?></h6>                        
+                            <form action="<?php  echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data" method="post" > 
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <label for=""></label>
+                                        <input type="file" class="form-control-file" name="profilephoto" id="profilephoto"
+                                        placeholder="" aria-describedby="fileHelpId">
+                                    </div>
+                                </div>   
 
                                 <div class="form-group">
                                     <label>Short Description</label>
-                                    <textarea class="form-control" name="" id="" rows="2"></textarea>
+                                    <textarea class="form-control" name="userbio" id="" rows="2"></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label>Area of Specialty</label>
-                                    <select class="custom-select" name="" id="">
-                                        <option selected>Choose</option>
-                                        <option value="">Designers</option>
-                                        <option value="">Illustrators</option>                                        
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <small id="helpId" class="form-text text-muted">(Optional)</small> 
-                                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Other area of specialty">
-                                </div>
-                                
-                                <button type="button" class="btn btn-primary btn-sm btn-block text-uppercase" data-toggle="modal" data-target="#businessModal" >Add business</button>
+
+                                <?php include_once('chooseinterest.php')?>
 
                                 <button id="login" type="submit" class="btn btn-primary btn-sm btn-block text-uppercase">UPDATE PROFILE</button>
+
+                                
                             </form>
                         </div>
                     </div>

@@ -35,15 +35,10 @@ if (isset($_POST['signin']) && $_POST['signin'] == 'signin') {
         $userobject -> login($email, $password);
     }
 
-
-
-
-  }
-   
-
+}
 ?>
 
-<div class="login-form py-5 px-3 ">
+<div class="login-form py-3 px-3 ">
     <form method="post" action="<?php  echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">          
         <?php 
             if (isset($output)) {
@@ -74,7 +69,7 @@ if (isset($_POST['signin']) && $_POST['signin'] == 'signin') {
         
         <div class="form-group row">
             <div class="col-sm">
-                <button name="login" type="submit" class="btn btn-block btn-green text-uppercase font-weight-bold">Login</button>
+                <button name="login" id="login" type="submit" class="btn btn-block btn-green text-uppercase font-weight-bold">Login</button>
             </div>
         </div>
     </form>

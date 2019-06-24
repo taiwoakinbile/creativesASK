@@ -1,5 +1,5 @@
 <?php include_once('header.php');
-$pagetitle = 'Sign Up';
+$pagetitle = 'Log In';
 ?>
 
         <section>
@@ -19,23 +19,16 @@ $pagetitle = 'Sign Up';
                             
                             <div class=" offset-2 col-md-6 col-sm">
                                 <div>
-                                    <span class="text-green font-weight-bolder" style="font-size: 2.5rem;" >Create Account</span>
-                                    <p><a href="signin.php" class="" style="font-size: 14px;">sign in to your account</a></p>
+                                    <span class="text-green font-weight-bolder text-center" style="font-size: 2.5rem;" >Log In</span>
+                                    <p><a href="register.php" class="" style="font-size: 14px;">create an account</a></p>
                                 </div>
                                 <!-- <button class="signup-button btn btn-block btn-lg btn-outline-yellow active">Sign Up</button> -->
                             </div>
-                                <!-- <div class="col-md-4 col-sm">
-                                    <button class="login-button btn btn-block btn-lg btn-outline-green">Login</button>
-                                </div> -->
-                          
                             <div class="row">
                                 <div class="offset-2 col-md-8">
-                                    <div>                                    
-                                        <?php include_once('signup.php');?>  
-                                        <?php //include_once('login.php');?>    
-                                            
-                                    </div>
-                                    
+                                                                       
+                                    <?php include_once('login.php');?>    
+                                     
                                 </div>
                             </div>
 

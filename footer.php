@@ -20,20 +20,11 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.login-form').hide();
 
-        $('.signup-button').click(function (e) { 
-            e.preventDefault();
-            $('.login-form').hide();
-            $('.signup-form').show();
-            
-        });
-
-        $('.login-button').click(function (e) { 
-            e.preventDefault();
-            $('.signup-form').hide();
-            $('.login-form').show();
-        });
+        // $('#email, #password').change(function (e) { 
+        //     $("#login").removeAttr('disabled');
+        // });
+        // 
     });
 </script>
     

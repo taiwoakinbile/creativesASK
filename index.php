@@ -1,61 +1,8 @@
 
-    <?php include('header.php'); ?>
+    <?php include('indexheader.php'); ?>
     <div class="container-fluid">
         
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon dark"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto ">
-                    <div class="dropdown">
-                        <a class="btn  btn-outline-wine  ml-3 " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i> Posts
-                        </a>
-                    </div>
-       
-                    <div class="dropdown">
-                        <a class="btn  btn-outline-wine ml-3 " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-layer-group"></i> Categories
-                        </a>
-                        
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Expert Articles</a>
-                            <a class="dropdown-item" href="#">Business List</a>
-                        </div>
-                    </div>  
-
-                    <form class="form-inline ml-3 my-lg-0">
-                        <div class="input-group flex-nowrap">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></span>
-                        </div>
-                            <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
-                        </div>
-                        <button  id="login" type="submit" class="btn btn-wine ml-3"><a href="landing.php">Join</a></button>
-                
-                    </form>              
-                </div>
-
-                
-            </div>
-            
-        </nav>
-
-        <section>
-            <div class="row">
-                <div class="col-md">
-                    <div class="banner"></div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="">
-
-        </section>
+        
 
         <!-- body -->
         <section class="main mx-5 p-3 bg-main">
@@ -107,4 +54,4 @@
 
         </section>
 
-        <?php include('footer.php'); ?>
+        <?php include('loginfooter.php'); ?>

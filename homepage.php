@@ -1,73 +1,23 @@
-<?php include('header.php'); ?>
+<?php 
+$pagetitle = 'Homapage';
+include('loginheader.php'); ?>
                         
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#post-questionModal">Post a question</a>
-                            <a class="dropdown-item"  id="" href="">Answer a Question</a>
-                        </div>
-                    </div>
-                    
-                    <div class="dropdown">
-                        <a class="btn  btn-outline-wine ml-3 " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-layer-group"></i> Categories
-                        </a>
-                        
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Expert Article</a>
-                            <a class="dropdown-item" href="business-list.php">Business List</a>
-                        </div>
-                    </div>
-                    
-                    <div class="dropdown">
-                        <a class=" ml-3 btn  btn-outline-wine " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-portrait"></i> Profile
-                        </a>
-                      
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="user-profile.php">View Profile</a>
-                          <a class="dropdown-item" href="index.php">Sign Out</a>
-                        </div>
-                    </div>
-
-                </div>
-                <form class="form-inline ml-3 my-lg-0">
-                    <div class="input-group flex-nowrap">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search"></i></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                    <!-- <button  id="login" type="submit" class="btn btn-wine ml-3"><a href="">Login</a></button> -->
-                    
-                </form>
-            </div>
-        </nav>
-
-        <section>
-            <div class="row">
-                <div class="col-md">
-                    <div class="banner"></div>
-                </div>
-            </div>
-
-        </section>
-
+       <!-- body -->
         <section class="">
-
-        </section>
-
-        <!-- body -->
-        <section class="main mx-5 p-3 bg-main">
             <div class="row">
-                <div class="col-md-3 ">
+                <!-- <div class="col-md-3 ">
                     <div class="card list-one" >
                         <div class="card-body">
                             <h6 class="card-title">Categories</h6>
-                            <!-- <h6 class="card-subtitle mb-2 text-muted">C</h6> -->
+                             <h6 class="card-subtitle mb-2 text-muted">C</h6> 
                             <p class="card-text"><a href="" class=" ">Illustrators</a></p>
                             <p class="card-text"><a href="">Designers</a></p>
                         </div>
                     </div>
                 </div>
+
+
+                
                 <div class="col-md-6 ">
                     <div class="list-group">
                         <div class="list-group-item list-group-item-action timeline">
@@ -121,38 +71,21 @@
                         
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                      <!-- users post here-->
+                    <!-- <button type="click" name="writepost"  class="btn btn-primary btn-yellow btn-lg ">Write a Post</button> -->
+                    <div class="post">
+                    
+                    </div>
+                    <div class="showpost">
+                    
+                    </div>
+                </div> 
+                <div class="col-md-3"></div> 
             </div>
 
         </section>
 
-        <?php include('footer.php'); ?>
-
-    </div>
-
-       
-
-
-
-
-
-    <!-- jQuery -->
-    <script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-    <!-- popper -->
-    <script type="text/javascript" src="bootstrap/js/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.close').click(function () { 
-                // e.preventDefault();
-                $('.').hide();
-            //hides a this post when the close button is closed
-            });
-            // when a post is submitted, a div .timeline should be created and and added to the center column of the main content
-        });
-
-    </script>
-    
-</body>
-</html>
+        <?php include('loginfooter.php'); ?>

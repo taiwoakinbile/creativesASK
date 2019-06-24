@@ -2,13 +2,13 @@
 <!-- footer -->
 
 
-<footer class="pt-5">
+<footer class="pt-4 position-sticky">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <img src="images/img.png" alt="creativeasklogo">
                         </div>
                     </div>
@@ -21,7 +21,7 @@
 
                     
                 </div>
-                <div class="row mb-5">
+                <div class="row mb-1">
                     <div class="col-md-2">
                         <p>About Us</p>
                     </div>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="col-md-5">
-                <div class="">                                                          <!--Newsletter-->
+                <!-- <div class="">                                                          Newsletter
                     <h5 id="footer-header" class="text-center text-capitalize">Subscribe For Updates!</h5>
                     <form action="" method="post">
                         <div class="input-group mb-3">
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </form>
-                </div>      
+                </div>       -->
                 
             </div>
             
@@ -93,20 +93,23 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.login-form').hide();
 
-        $('.signup-button').click(function (e) { 
-            e.preventDefault();
-            $('.login-form').hide();
-            $('.signup-form').show();
+        $('#writepost').click(function (e) { 
+            // e.preventDefault();
+            // alert('hey');
+            $('.postcontainer').addClass(.post);
+
+            $('.post').load("writepost.php", {});
             
         });
 
-        $('.login-button').click(function (e) { 
-            e.preventDefault();
-            $('.signup-form').hide();
-            $('.login-form').show();
+        $('#submitpost').click(function (e) { 
+            // e.preventDefault();
+            alert('hey');
+            // $('.showpost').load("viewpost.php", ,{});
+            
         });
+        
     });
 </script>
     
