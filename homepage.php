@@ -5,7 +5,7 @@ include('loginheader.php'); ?>
        <!-- body -->
         <section class="">
             <div class="row">
-                <!-- <div class="col-md-3 ">
+                <div class="col-md-3 ">
                     <div class="card list-one" >
                         <div class="card-body">
                             <h6 class="card-title">Categories</h6>
@@ -71,7 +71,7 @@ include('loginheader.php'); ?>
                         
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
                       <!-- users post here-->

@@ -59,8 +59,8 @@
                         </div> -->
                     </div>
 
-                    <a class="btn btn-green  ml-3 " href="writepost.php" role="button" > <i class="fa fa-plus-circle" aria-hidden="true"></i>Write Post
-                        </a>  
+                    <button class="btn btn-green  ml-3 " href=""  > <i class="fa fa-plus-circle" aria-hidden="true"></i>Write Post
+                    </button>  
 
                     
                     <div class="dropdown">
@@ -100,7 +100,7 @@
             </div>
         </nav>
 
-        <div class="postcontainer"></div>
+        <div class="post"></div>
 
     
 

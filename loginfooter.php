@@ -97,7 +97,7 @@
         $('#writepost').click(function (e) { 
             // e.preventDefault();
             // alert('hey');
-            $('.postcontainer').addClass(.post);
+            
 
             $('.post').load("writepost.php", {});
             

@@ -36,7 +36,42 @@ class User{
         //create instance/object of  DatabaseConfig class
         $this->dbobj = new DatabaseConfig();
     }
-    
+
+
+    //function to add role
+    public function addrole($role_title){
+
+        //write the query to insert into taable
+        $addrolequery = "INSERT INTO roles(role_title)  
+                            VALUES ('$role_title')";
+
+        //check if the query() runs // data is insert into users table
+        if ($this->dbobj->dbcon->query($addrolequery)===true){
+
+            
+            //create session variable
+           echo "role was successfully added";
+            
+        }
+        else{
+            echo "Error".$this->dbobj->dbcon->error;
+        }
+    }
+
+    //function to get roles from the table
+    public function getRoles(){
+        //write the query to select all roles except super admin
+        $sql = "SELECT * FROM roles WHERE role_title != 'Super Admin'";
+
+        //check if the query() runs the sql statement
+        if ($result = $this->dbobj->dbcon->query($sql)) {
+            $row = $result->fetch_all(MYSQLI_ASSOC);
+        }
+        else{
+            echo "Error" .$this->dbobj->dbcon->error;
+        }
+        return $row;
+    }
 
     //user signup function
     public function signup($lastname, $firstname, $email, $pswd){
@@ -174,10 +209,7 @@ class User{
 
             }
 
-            
-
-
-            
+           
         }
         else {
             $result = "<div class='alert alert-danger'> You have not uploaded any image!</div>";
@@ -208,8 +240,58 @@ class User{
     }
 
 
-    //function to submit add post to post 'table'
-    public function submitPost(){
+    //function to display all users
+    public function getUsers(){
+        //write the query to select all users with their role title
+        $userrolequery = "SELECT *  FROM users;";
+
+        //check if the query() runs the sql statement
+        if ($result = $this->dbobj->dbcon->query($userrolequery)) {
+            $row = $result->fetch_all(MYSQLI_ASSOC);
+
+        }
+        else{
+            echo "Error" .$this->dbobj->dbcon->error;
+        }
+        return $row;
+    }
+
+
+    //function to delete user based on the userID
+    public function deleteUser($userid){
+        $sql = "DELETE FROM users where user_id = '$userid';";
+
+        //RUN THE QUERY
+        $this->dbobj->dbcon->query($sql);
+
+        //to know how many rows affected
+        if($this->dbobj->dbcon->affected_rows == 1){
+            //redirect to show all product page
+            header("Location: http://localhost/creativesASK/showallusers.php");
+            exit;
+        }else{
+            $msg ="<div class='alert alert-danger'> Oops! Something happened.".$this->dbobj->dbcon->error."</div>";
+        }
+
+        return $msg;
+    }
+}  
+
+    // class for post 
+    class Post{
+        //member variables
+        
+        //obj handler for DatabaseConfig class
+        public $dbobj;
+    
+        //member function/method
+        public function __construct(){
+            //create instance/object of  DatabaseConfig class
+            $this->dbobj = new DatabaseConfig();
+        }
+
+        //function to submit add post to post 'table'
+        public function addPost(){
 
         //write the query to insert into  taable
         $sql = "INSERT INTO posts(post_title, content, user_id, category_id) VALUES ('$post_title', '$postcontent', '$userid', '$categoryid')";
@@ -227,65 +309,6 @@ class User{
                 echo "Error".$this->dbobj->dbcon->error;
             }
         }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // public function getUser(){
-
-    //     $userid =  $_SESSION['myuserid'];
-    //     //write the query to select all users with their role title
-    //     $sql = "SELECT * FROM users WHERE user_id = '$userid'";
-
-    //     //check if the query() runs the sql statement
-    //     if ($result = $this->dbobj->dbcon->query($sql)) {
-    //         $row = $result->fetch_array(MYSQLI_ASSOC);
-    //         // var_dump($row);
-    //     }
-    //     else{
-    //         echo "Error" .$this->dbobj->dbcon->error;
-    //     }
-    //     return $row;
-    // }
 
 
 }

@@ -47,8 +47,7 @@
                     <div class="card" >
                         <div class="card-body">
                         <?php if (isset($output)) { echo $output; }?>
-                        <button type="button" class="btn btn-green btn-sm text-uppercase ml-1 float-right">Choose Interest</button>
-
+                        
                         <button type="button" class="btn btn-yellow btn-sm text-uppercase float-right">Add business</button>
 
                             <div>
@@ -66,7 +65,7 @@
 
                             </div>
                             <h5 class="card-title">Welcome, <?php echo $_SESSION['lastname']." ".$_SESSION['firstname'];?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $_SESSION['email']?></h6>                        
+                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $_SESSION['bio']?></h6>                        
                             <form action="<?php  echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" enctype="multipart/form-data" method="post" > 
                                 <div class="form-group row">
                                     <div class="col-md-12">
@@ -81,7 +80,7 @@
                                     <textarea class="form-control" name="userbio" id="" rows="2"></textarea>
                                 </div>
 
-                                <?php include_once('chooseinterest.php')?>
+                                
 
                                 <button id="login" type="submit" class="btn btn-primary btn-sm btn-block text-uppercase">UPDATE PROFILE</button>
 
