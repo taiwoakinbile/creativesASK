@@ -291,10 +291,13 @@ class User{
         }
 
         //function to submit add post to post 'table'
-        public function addPost(){
+        public function addQuestion($userid){
+
+            $userid =  $_SESSION['myuserid'];
+
 
         //write the query to insert into  taable
-        $sql = "INSERT INTO posts(post_title, content, user_id, category_id) VALUES ('$post_title', '$postcontent', '$userid', '$categoryid')";
+        $sql = "INSERT INTO posts(content, user_id, category_id) VALUES ('$postcontent', '$userid', '$categoryid')";
 
          //check if the query() runs // data is insert into posts table
             if ($this->dbobj->dbcon->query($sql)===true){
