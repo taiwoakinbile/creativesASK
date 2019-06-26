@@ -1,7 +1,7 @@
 <?php 
+ob_start();
     session_start();
      include_once('creativaskclass.php');
-
 
      if (!isset($_SESSION['myuserid'])) {
         # redirect to login page
@@ -54,12 +54,12 @@
                         </a>                      
                         
                         <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <button class="dropdown-item"  href="" id="writepost" >Post a question</button>
+                            <button class="dropdown-item"  href=""  >Post a question</button>
                             <a class="dropdown-item"  id="" href="">Answer a Question</a>
                         </div> -->
                     </div>
 
-                    <button class="btn btn-green  ml-3 " href=""  > <i class="fa fa-plus-circle" aria-hidden="true"></i>Write Post
+                    <button class="btn btn-green  ml-3 " href="" id="writequestion" > <i class="fa fa-plus-circle" aria-hidden="true"></i>Write Post
                     </button>  
 
                     
@@ -99,8 +99,28 @@
                 </form>
             </div>
         </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-6">
+                <div class="question"> 
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam in commodi maiores optio necessitatibus similique.
+                    <?php include_once('writepost.php');?>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+                
+            </div>
+        </div>
 
-        <div class="post"></div>
+        
+        <div class="showpost">
+                    
+        </div>
 
     
 

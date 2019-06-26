@@ -291,13 +291,13 @@ class User{
         }
 
         //function to submit add post to post 'table'
-        public function addQuestion($userid){
+        public function addQuestion($postcontent ,$userid){
 
             $userid =  $_SESSION['myuserid'];
 
 
         //write the query to insert into  taable
-        $sql = "INSERT INTO posts(content, user_id, category_id) VALUES ('$postcontent', '$userid', '$categoryid')";
+        $sql = "INSERT INTO posts(questioncontent, user_id) VALUES ('$postcontent', '$userid')";
 
          //check if the query() runs // data is insert into posts table
             if ($this->dbobj->dbcon->query($sql)===true){
@@ -311,6 +311,19 @@ class User{
             else{
                 echo "Error".$this->dbobj->dbcon->error;
             }
+        }
+
+        public function showQuestion(){
+            //write the query to display question on homepage
+            $query = "SELECT * FROM posts ORDER BY rand() limit 12";
+            if ($result = $this->dbobj->dbcon->query($query)) {
+                $row = $result->fetch_all(MYSQLI_ASSOC);
+    
+            }
+            else{
+                echo "Error" .$this->dbobj->dbcon->error;
+            }
+            return $row;
         }
 
 

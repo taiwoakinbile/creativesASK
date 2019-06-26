@@ -19,6 +19,15 @@ include('loginheader.php'); ?>
 
                 
                 <div class="col-md-6 ">
+                    <?php 
+                        include_once('showquestion.php');
+                    ?>
+
+
+
+
+
+
                     <div class="list-group">
                         <div class="list-group-item list-group-item-action timeline">
                             <div class="d-flex w-100 justify-content-between">
@@ -76,15 +85,13 @@ include('loginheader.php'); ?>
                 <div class="col-md-6">
                       <!-- users post here-->
                     <!-- <button type="click" name="writepost"  class="btn btn-primary btn-yellow btn-lg ">Write a Post</button> -->
-                    <div class="post">
                     
-                    </div>
-                    <div class="showpost">
                     
-                    </div>
                 </div> 
                 <div class="col-md-3"></div> 
             </div>
+
+
 
         </section>
 

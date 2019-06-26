@@ -94,24 +94,31 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        $('#writepost').click(function (e) { 
+        $('.question').hide();
+        $('#writequestion').click(function (e) { 
             // e.preventDefault();
             // alert('hey');
             
 
-            $('.post').load("writepost.php", {});
+            // $('.question').load("writepost.php", {});
+            $('.question').show();
+
+            
             
         });
 
-        $('#submitpost').click(function (e) { 
-            // e.preventDefault();
-            alert('hey');
-            // $('.showpost').load("viewpost.php", ,{});
+        // $('#submitpost').click(function (e) { 
+        //     // e.preventDefault();
+        //     alert('hey');
+        //     // $('.showpost').load("viewpost.php", ,{});
             
-        });
+        // });
+
+        
         
     });
 </script>
     
 </body>
 </html>
+<?php ob_flush();?>
